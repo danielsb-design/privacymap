@@ -3,7 +3,8 @@ import {
   ZoomableGroup,
   ComposableMap,
   Geographies,
-  Geography
+  Geography, 
+  Annotation
 } from "react-simple-maps";
 
 const geoUrl =
