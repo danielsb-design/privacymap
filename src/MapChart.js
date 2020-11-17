@@ -4,7 +4,7 @@ import {
   ComposableMap,
   Geographies,
   Geography, 
-  Annotation
+  //Annotation
 } from "react-simple-maps";
 
 const geoUrl =
