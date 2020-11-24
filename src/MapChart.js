@@ -26,7 +26,10 @@ const makeToolTip = (ISO_A3) => {
   if(exampleData[ISO_A3]) {
     propertyOne = exampleData[ISO_A3]["Property 1"] 
   }
-  return `${ISO_A3} \n\n` + `${propertyOne}`
+  var letterID = ISO_A3 
+  var dataID = propertyOne
+  return letterID + '\n\n' + dataID
+  //return `${ISO_A3} \n\n` + '${propertyOne}'
 }
 
 const MapChart = ({ setTooltipContent }) => {
