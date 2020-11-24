@@ -4,13 +4,14 @@ import {
   ComposableMap,
   Geographies,
   Geography, 
-  //Annotation
+  //Annotationnpm s
 } from "react-simple-maps";
+import exampleData from "./example_code.json"
 
 const geoUrl =
   "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
 
-const rounded = num => {
+/*const rounded = num => {
   if (num > 1000000000) {
     return Math.round(num / 100000000) / 10 + "Bn";
   } else if (num > 1000000) {
@@ -18,7 +19,18 @@ const rounded = num => {
   } else {
     return Math.round(num / 100) / 10 + "K";
   }
-};
+}; */
+
+const makeToolTip = (ISO_A3) => {
+  let propertyOne = "no data"
+  if(exampleData[ISO_A3]) {
+    propertyOne = exampleData[ISO_A3]["Property 1"] 
+  }
+  var letterID = ISO_A3 
+  var dataID = propertyOne
+  return letterID + '\n\n' + dataID
+  //return `${ISO_A3} \n\n` + '${propertyOne}'
+}
 
 const MapChart = ({ setTooltipContent }) => {
   return (
@@ -32,8 +44,8 @@ const MapChart = ({ setTooltipContent }) => {
                   key={geo.rsmKey}
                   geography={geo}
                   onMouseEnter={() => {
-                    const { NAME, POP_EST } = geo.properties;
-                    setTooltipContent(`${NAME} — ${rounded(POP_EST)}`);
+                    const { NAME, ISO_A3 } = geo.properties;
+                    setTooltipContent(makeToolTip(ISO_A3, NAME));
                   }}
                   onMouseLeave={() => {
                     setTooltipContent("");

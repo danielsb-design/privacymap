@@ -1,0 +1,17 @@
+{
+    "AGO": {
+       "Country Name": "Angola",
+       "Property 1": "on the bus",
+       "Property 2": "lorem ipsum"
+    },
+    "GHA": {
+       "Country Name": "Ghana",
+       "Property 1": "on the bus",
+       "Property 2": "lorem ipsum"
+    },
+    "USA": {
+       "Country Name": "United States of America",
+       "Property 1": "off the bus",
+       "Property 2": "lorem ipsum"
+    }
+ }
